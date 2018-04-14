@@ -1,4 +1,5 @@
 FROM node:alpine
+MAINTAINER Alexis Duque  <alexisd@rtone.fr>
 
  #compass 
 RUN apk add --update build-base openssl libffi-dev ruby ruby-dev ruby-rdoc ruby-irb
@@ -8,5 +9,3 @@ RUN apk del build-base libffi-dev openssl ruby-dev \
     && rm -rf /var/cache/apk/*
 RUN gem install compass \
     && npm install -g grunt grunt-cli bower --production
-
-CMD ["node"]
